@@ -35,7 +35,6 @@ class QuoteFragment : Fragment() {
         viewModel.getQuoteFromRoom()
             viewModel.getQuote()
         observeQuote()
-        getQuoteFromRoom()
         saveQuote()
         share()
         binding.button.setOnClickListener {
@@ -64,13 +63,6 @@ class QuoteFragment : Fragment() {
         }
     }
 
-    private fun getQuoteFromRoom(){
-        viewModel.quoteLocalLiveData.observe(viewLifecycleOwner){
-            it.map {
-                mutableList.add(it)
-            }
-        }
-    }
 
     private fun saveQuote(){
         if(fav){
