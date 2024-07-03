@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/quoteFragment">
+
+    <fragment
+        android:id="@+id/quoteFragment"
+        android:name="com.imranmelikov.codsoft_quoteoftheday.fragment.QuoteFragment"
+        android:label="fragment_quote"
+        tools:layout="@layout/fragment_quote" >
+        <action
+            android:id="@+id/action_quoteFragment_to_favFragment"
+            app:destination="@id/favFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/favFragment"
+        android:name="com.imranmelikov.codsoft_quoteoftheday.fragment.FavFragment"
+        android:label="fragment_fav"
+        tools:layout="@layout/fragment_fav" >
+        <action
+            android:id="@+id/action_favFragment_to_quoteFragment"
+            app:destination="@id/quoteFragment" />
+    </fragment>
+</navigation>
